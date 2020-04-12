@@ -45,18 +45,43 @@ body {
 
 @media screen and (max-width: 480px) {
   .column {
+    flex-flow: column;
+    display: block;
+  }
+  .row {
+    flex-flow: row;
+    display: block;
+  }
+  .container.meet-cast {
+    margin: 0 0 100vw 0;
+  }
+  .cast-name {
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  .cast-about {
+    font-size: 14px;
+  } 
+  .container.episodes {
+     margin: 100vw auto 0 auto; 
+  }
+  .episodes > iframe {
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+  .column {
     flex: 1;
     display: block;
   }
   .container.meet-cast {
-    margin: 0 0 20vh 0;
+    margin: 0 auto 100vw auto;
+    width: 100vw;  
   }
   .card > div > h2 {
-    font-size: 14px;
+    font-size: 16px;
       font-weight: bolder;
-  }
-  .card > .div > p {
-    font-size: 10px;
   } 
   .container.episodes {
      margin: 100vw auto 0 auto; 
@@ -90,7 +115,8 @@ body {
 
 .card img {
   border-radius: 100%;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .socialmedia.card {
@@ -99,9 +125,14 @@ body {
 }
 
 .socialmedia.link {
-  width: 50px;
+  width: 60px;
     margin: 0;
 }
+
+.socialmedia.link img {
+  width: 40px;
+}
+
 .container {
   padding: 200px 16px 0 16px;
 }
@@ -132,9 +163,9 @@ body {
   background-color: #555;
 }
 
-.episodes {
+.container.episodes {
    width: 100%;
-   margin: 20vh auto; 
+   margin: 20vh auto 0 auto; 
 }
 
 .episodes > iframe {
@@ -145,16 +176,4 @@ body {
 @keyframes fadein {
     0% {opacity: 0%}
     100% {opacity: 100%}
-}
-
-@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-  html {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
 }
